@@ -16,7 +16,7 @@ The workflow is this: https://github.com/ivan-hc/Yandex-Browser-appimage/blob/ma
 
 I understand that in this historical moment opening a repository like this is something controversial, and I personally am a Firefox user and a big supporter of Mozilla Firefox. If it were up to me I would abolish all browsers based on Chromium, but I also distribute the AppImages of [Google Chrome](https://github.com/ivan-hc/Chrome-appimage), [Opera](https://github.com/ivan-hc/Opera-appimage), [Vivaldi](https://github.com/ivan-hc/Vivaldi-appimage), [MS Edge](https://github.com/ivan-hc/MS-Edge-appimage) and [Chromium](https://github.com/ivan-hc/Chromium-Web-Browser-appimage), and if I do it is because I like to experiment my skills in assembling AppImage packages and enrich my database with applications that, although not officially recognized by the companies that build them, are already distributed on other platforms such as Flathub/Flatpak (see Yandex browser [here](https://flathub.org/apps/ru.yandex.Browser)) and Snapcraft/Snap (they have two, [here](https://snapcraft.io/yandex) and [here](https://snapcraft.io/yandex-browser)).
 
-My job and my sole goal is to provide all portable applications with a home to stay, and I do it through my package manager "[AM](https://github.com/ivan-hc/AM)".
+My work and my sole goal is to provide all portable applications with a home to stay, and I do it through my package manager "[AM](https://github.com/ivan-hc/AM)".
 
 Portable applications, especially AppImages, are easy to extract and analyze, and for these my package manager provides a sandboxing system based on Bubblewrap, which is constantly improving (see https://github.com/ivan-hc/AM?tab=readme-ov-file#sandbox-an-appimage).
 
