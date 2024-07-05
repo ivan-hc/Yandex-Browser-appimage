@@ -2,7 +2,7 @@
 Unofficial AppImage for Yandex Web Browser Stable, Beta and Corporation.
 
 # Disclaim
-This repository was created with the sole purpose of building AppImage packages from official .deb packages. The packager/developer has no relationship with Yandex company nor does he support Russian government policies, in any way!
+This repository was created with the sole purpose of building AppImage packages from official .deb packages downloaded from [here](https://repo.yandex.ru/yandex-browser). I have no relationship with Yandex company nor I support Russian government policies, **in any way**!
 
 The idea of ​​opening this repository started from a request made to me by a user who uses it ([here](https://github.com/ivan-hc/AM/issues/760)), and since I do not trust distributing third-party software packages that may contain malicious software outside of the one officially released by upstream (assuming that Yandex itself releases malicious products), I decided to take responsibility for assembling these packages and distributing them, for users who need them.
 
