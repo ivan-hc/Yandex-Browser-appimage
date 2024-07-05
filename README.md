@@ -20,13 +20,12 @@ My job and my sole goal is to provide all portable applications with a home to s
 
 Portable applications, especially AppImages, are easy to extract and analyze, and for these my package manager provides a sandboxing system based on Bubblewrap, which is constantly improving (see https://github.com/ivan-hc/AM?tab=readme-ov-file#sandbox-an-appimage).
 
-#### As for the security of Yandex Browser itself, or any other software you trust, it is entirely up to you. Use at your own risk!
+#### As for the security of Yandex Browser itself, or any other software you trust, it is entirely up to you.
+### Use at your own risk!
 
-PS: I only speak and understand English, Italian and Neapolitan.
+PS: Although I have a Russian name, **I am not Russian nor do I speak Russian at all**!
 
-Although I have a Russian name, "Ivan", I am 🇮🇹 Italian 🇮🇹.
-
-I am not Russian nor do I speak Russian at all.
+I am 🇮🇹 ITALIAN 🇮🇹 and I only speak and understand English, Italian and Neapolitan.
 
 ---------------------------------
 
