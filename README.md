@@ -2,6 +2,12 @@
 Unofficial AppImage for Yandex Web Browser Stable, Beta and Corporation
 
 ---------------------------------
+# Support
+Only in English, Italian and Neapolitan.
+
+I am not Russian nor do I speak Russian, although I have a Russian name. I am Italian.
+
+---------------------------------
 
 ## Install and update it with ease
 
