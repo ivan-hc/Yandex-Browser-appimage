@@ -2,28 +2,7 @@
 Unofficial AppImage for Yandex Web Browser Stable, Beta and Corporation.
 
 # Disclaim
-This repository was created with the sole purpose of building AppImage packages from official .deb packages downloaded from [here](https://repo.yandex.ru/yandex-browser). I have no relationship with Yandex company nor I support Russian government policies, **in any way**!
-
-The idea of ​​opening this repository started from a request made to me by a user who uses the Yandex browser ([here](https://github.com/ivan-hc/AM/issues/760)), and since I do not trust distributing third-party software packages that may contain malicious software outside of the one officially released by upstream (assuming that Yandex itself releases malicious products or not), I decided to take responsibility for assembling these packages and distributing them, for users who need them.
-
-You can download and extract the packages using the command
-```
-./*.Appimage --appimage-extract
-```
-The script that creates them is this: https://github.com/ivan-hc/Yandex-Browser-appimage/blob/main/yandex-builder.sh
-
-The workflow is this: https://github.com/ivan-hc/Yandex-Browser-appimage/blob/main/.github/workflows/CI.yml
-
-I understand that in this historical moment opening a repository like this is something controversial, and I personally am a Firefox user and a big supporter of Mozilla Firefox. If it were up to me I would abolish all browsers based on Chromium, but I also distribute the AppImages of [Google Chrome](https://github.com/ivan-hc/Chrome-appimage), [Opera](https://github.com/ivan-hc/Opera-appimage), [Vivaldi](https://github.com/ivan-hc/Vivaldi-appimage), [MS Edge](https://github.com/ivan-hc/MS-Edge-appimage) and [Chromium](https://github.com/ivan-hc/Chromium-Web-Browser-appimage), and if I do it is because I like to experiment my skills in assembling AppImage packages and enrich my database with applications that, although not officially recognized by the companies that build them, are already distributed on other platforms such as Flathub/Flatpak (see Yandex browser [here](https://flathub.org/apps/ru.yandex.Browser)) and Snapcraft/Snap (they have two, [here](https://snapcraft.io/yandex) and [here](https://snapcraft.io/yandex-browser)).
-
-My work and my sole goal is to provide all portable applications with a home to stay, and I do it through my package manager "[AM](https://github.com/ivan-hc/AM)".
-
-Portable applications, especially AppImages, are easy to extract and analyze, and for these my package manager provides a sandboxing system based on Bubblewrap, which is constantly improving (see https://github.com/ivan-hc/AM?tab=readme-ov-file#sandbox-an-appimage).
-
-#### As for the security of Yandex Browser itself, or any other software you trust, it is entirely up to you.
-### Use at your own risk!
-
-PS: Although I have a Russian name, **I am not Russian nor do I speak Russian at all**!
+Although I have a Russian name, **I am not Russian nor do I speak Russian at all**!
 
 I am 🇮🇹 ITALIAN 🇮🇹 and I only speak and understand English, Italian and Neapolitan.
 
