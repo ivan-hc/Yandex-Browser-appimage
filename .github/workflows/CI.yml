@@ -16,8 +16,7 @@ jobs:
 
     - name: build
       run: |
-        sudo apt update
-        sudo apt install libfuse2
+        sudo apt update && sudo apt install libfuse2 desktop-file-utils
         wget https://raw.githubusercontent.com/ivan-hc/Yandex-Browser-appimage/main/yandex-builder.sh
         chmod a+x ./yandex-builder.sh
         ./yandex-builder.sh
