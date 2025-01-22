@@ -37,27 +37,29 @@ _create_yandex_appimage(){
 	exec "${HERE}"/yandex_browser "$@"
 	HEREDOC
 	chmod a+x ./"$APP".AppDir/AppRun
-	ARCH=x86_64 ./appimagetool --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20 ./"$APP".AppDir
-	mv ./*.AppImage ./Yandex-Browser-"$CHANNEL"-"$VERSION"-x86_64.AppImage || exit 1
+
+	ARCH=x86_64 ./appimagetool --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20 \
+	-u "gh-releases-zsync|$GITHUB_REPOSITORY_OWNER|Yandex-Browser-appimage|continuous|*x86_64.AppImage.zsync" \
+	./"$APP".AppDir Yandex-Browser-"$CHANNEL"-"$VERSION"-x86_64.AppImage || exit 1
 }
 
 CHANNEL="stable"
 mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
-mv ./"$CHANNEL"/*.AppImage ./
+mv ./"$CHANNEL"/*.AppImage* ./
 
 CHANNEL="beta"
 mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
-mv ./"$CHANNEL"/*.AppImage ./
+mv ./"$CHANNEL"/*.AppImage* ./
 
 CHANNEL="corporate"
 mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
-mv ./"$CHANNEL"/*.AppImage ./
+mv ./"$CHANNEL"/*.AppImage* ./
 
 cd ..
-mv ./tmp/*.AppImage ./
+mv ./tmp/*.AppImage* ./
