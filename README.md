@@ -1,6 +1,13 @@
 # Yandex-Browser-appimage
 Unofficial AppImage for Yandex Web Browser Stable, Beta and Corporation.
 
+--------------------------------------------------
+### NOTE: This wrapper is not verified by, affiliated with, or supported by Yandex.
+
+**The base software is under a proprietary license and unofficially repackaged as an AppImage for demonstration purposes, for the original authors, to promote this packaging format to them. Consider this package as "experimental". I also invite you to request the authors to release an official AppImage, and if they agree, you can show this repository as a proof of concept.**
+
+--------------------------------------------------
+
 # Disclaim
 Although I have a Russian name, **I am not Russian nor do I speak Russian at all**!
 
