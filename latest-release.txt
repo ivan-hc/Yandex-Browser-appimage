@@ -1,4 +1,4 @@
 https://github.com/ivan-hc/Yandex-Browser-appimage/releases/download/continuous/Yandex-Browser-beta-25.4.1.1133-1-x86_64.AppImage
 https://github.com/ivan-hc/Yandex-Browser-appimage/releases/download/continuous/Yandex-Browser-corporate-25.4.1.1137-1-x86_64.AppImage
 https://github.com/ivan-hc/Yandex-Browser-appimage/releases/download/continuous/Yandex-Browser-stable-25.4.1.1213-1-x86_64.AppImage
-Sat Jul 12 01:18:34 UTC 2025
+Sun Jul 13 01:23:55 UTC 2025
