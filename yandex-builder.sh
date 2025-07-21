@@ -15,10 +15,15 @@ fi
 # CREATE CHROME BROWSER APPIMAGES
 
 _create_yandex_appimage(){
+	DEB=$(curl -Ls https://repo.yandex.ru/yandex-browser/deb/pool/main/y/"$APP"-"$CHANNEL"/ | tr '"' '\n' | grep -i "^yandex.*deb$" | head -1)
+	if [ -z "$DEB" ]; then
+		sleep 5
+		DEB=$(curl -Ls https://repo.yandex.ru/yandex-browser/deb/pool/main/y/"$APP"-"$CHANNEL"/ | tr '"' '\n' | grep -i "^yandex.*deb$" | head -1)
+	fi
 	if wget --version | head -1 | grep -q ' 1.'; then
-		wget -q --no-verbose --show-progress --progress=bar "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$(curl -Ls https://repo.yandex.ru/yandex-browser/deb/pool/main/y/"$APP"-"$CHANNEL"/ | tr '"' '\n' | grep -i "^yandex.*deb$" | head -1)"
+		wget -q --no-verbose --show-progress --progress=bar "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$DEB" || exit 1
 	else
-		wget "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$(curl -Ls https://repo.yandex.ru/yandex-browser/deb/pool/main/y/"$APP"-"$CHANNEL"/ | tr '"' '\n' | grep -i "^yandex.*deb$" | head -1)"
+		wget "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$DEB" || exit 1
 	fi
 	ar x ./*.deb
 	tar xf ./data.tar.xz
