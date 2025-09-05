@@ -38,7 +38,7 @@ _create_yandex_appimage(){
 	./"$APP".AppDir Yandex-Browser-"$CHANNEL"-"$VERSION"-x86_64.AppImage || exit 1
 }
 
-wget --recursive --no-parent "index.html*" https://repo.yandex.ru/yandex-browser/deb/pool/main/y/
+wget --recursive --tries=10 --no-parent "index.html*" https://repo.yandex.ru/yandex-browser/deb/pool/main/y/
 mv ./repo.yandex.ru/yandex-browser/deb/pool/main/y/*/*deb . || exit 1
 
 CHANNEL="stable"
