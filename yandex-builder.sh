@@ -15,6 +15,13 @@ fi
 # CREATE CHROME BROWSER APPIMAGES
 
 _create_yandex_appimage(){
+	DEB=$(curl -Ls "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/" | tr '">< ' '\n' | grep ".*amd64.deb" | tail -1)
+	wait
+	if wget --version | head -1 | grep -q ' 1.'; then
+		wget -q --no-verbose --show-progress --progress=bar "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$DEB" || exit 1
+	else
+		wget "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/$APP-$CHANNEL/$DEB" || exit 1
+	fi
 	ar x ./*.deb
 	tar xf ./data.tar.xz
 	mkdir "$APP".AppDir
@@ -38,23 +45,20 @@ _create_yandex_appimage(){
 	./"$APP".AppDir Yandex-Browser-"$CHANNEL"-"$VERSION"-x86_64.AppImage || exit 1
 }
 
-wget --recursive --tries=10 --no-parent "index.html*" https://repo.yandex.ru/yandex-browser/deb/pool/main/y/
-mv ./repo.yandex.ru/yandex-browser/deb/pool/main/y/*/*deb . || exit 1
-
 CHANNEL="stable"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
+mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
 
 CHANNEL="beta"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
+mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
 
 CHANNEL="corporate"
-mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && mv ./*"$CHANNEL"*.deb ./"$CHANNEL"/ && cd "$CHANNEL" || exit 1
+mkdir -p "$CHANNEL" && cp ./appimagetool ./"$CHANNEL"/appimagetool && cd "$CHANNEL" || exit 1
 _create_yandex_appimage
 cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
