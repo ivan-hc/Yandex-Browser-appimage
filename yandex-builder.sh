@@ -28,7 +28,7 @@ _create_yandex_appimage(){
 	mv ./opt/*/*/* ./"$APP".AppDir/
 	mv ./usr/share/applications/yandex*.desktop ./"$APP".AppDir/
 	ICONNAME=$(cat ./"$APP".AppDir/*desktop | grep "Icon=" | head -1 | cut -c 6-)
-	cp ./"$APP".AppDir/*512.png ./"$APP".AppDir/"$ICONNAME".png
+	cp ./"$APP".AppDir/*512.png ./"$APP".AppDir/"$ICONNAME".png || cp ./"$APP".AppDir/*256.png ./"$APP".AppDir/"$ICONNAME".png || cp ./"$APP".AppDir/*128.png ./"$APP".AppDir/"$ICONNAME".png
 	tar xf ./control.tar.xz
 	VERSION=$(cat control | grep Version | cut -c 10-)
 
