@@ -8,7 +8,7 @@ cd ./tmp || exit 1
 
 # DOWNLOAD APPIMAGETOOL
 if ! test -f ./appimagetool; then
-	wget -q https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage -O appimagetool
+	wget -q https://github.com/pkgforge-dev/appimagetool/releases/latest/download/appimagetool-x86_64-linux -O appimagetool
 	chmod a+x ./appimagetool
 fi
 
@@ -29,6 +29,7 @@ _create_yandex_appimage(){
 	mv ./usr/share/applications/yandex*.desktop ./"$APP".AppDir/
 	ICONNAME=$(cat ./"$APP".AppDir/*desktop | grep "Icon=" | head -1 | cut -c 6-)
 	cp ./"$APP".AppDir/*512.png ./"$APP".AppDir/"$ICONNAME".png || cp ./"$APP".AppDir/*256.png ./"$APP".AppDir/"$ICONNAME".png || cp ./"$APP".AppDir/*128.png ./"$APP".AppDir/"$ICONNAME".png
+	cp ./"$APP".AppDir/"$ICONNAME".png ./"$APP".AppDir/.DirIcon
 	tar xf ./control.tar.xz
 	VERSION=$(cat control | grep Version | cut -c 10-)
 
@@ -40,9 +41,10 @@ _create_yandex_appimage(){
 	HEREDOC
 	chmod a+x ./"$APP".AppDir/AppRun
 
-	ARCH=x86_64 ./appimagetool --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20 \
+	APPIMAGE_ARCH=x86_64 VERSION="$VERSION" ./appimagetool \
 	-u "gh-releases-zsync|$GITHUB_REPOSITORY_OWNER|Yandex-Browser-appimage|continuous|*-$CHANNEL-*x86_64.AppImage.zsync" \
-	./"$APP".AppDir Yandex-Browser-"$CHANNEL"-"$VERSION"-x86_64.AppImage || exit 1
+	-n Yandex-Browser-"$CHANNEL"-"$VERSION"-x86_64.AppImage \
+	./"$APP".AppDir || exit 1
 }
 
 CHANNEL="stable"
